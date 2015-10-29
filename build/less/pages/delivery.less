@@ -1,0 +1,76 @@
+//Цвета
+@custom_text-color: #333;
+@main-theme-color: #1663c4;
+
+//велечины
+@custom-margin: 30px;
+
+//шрифты
+@font-size_13px: 0.813em;
+@font-size_18px: 1.125em;
+@font-size_11px: 0.688em;
+@font-size_12px: 0.750em;
+@font-size_15px: 0.938em;
+@font-size_14px: 0.875em;
+@font-size_16px: 1em;
+@font-size_20px: 1.250em;
+@font-size_24px: 1.500em;
+@font-size_22px: 1.375em;
+
+@line_height_20px: 1.250em;
+@line_height_30px: 1.875em;
+@line_height_40px: 2.500em;
+@line_height_25px: 1.563em;
+
+
+.delivery{
+
+	&>.container{
+		columns: 1;
+	    -webkit-columns: 1;
+	    -moz-columns: 1	; 
+
+	    -webkit-column-gap: 0px;  
+	    -moz-column-gap: 0px;  
+	    column-gap: 0px;  
+
+	    column-fill: auto;
+	}
+	.container{
+		padding: 0 15px;
+		min-width: inherit;
+		margin: 0;
+	}
+	p{
+		color: #333333;
+		font-size: @font-size_14px;
+		line-height: 25px;
+		margin-bottom: 40px;
+
+		-webkit-column-break-inside: avoid;
+	    page-break-inside: avoid;           
+	    break-inside: avoid-column;  
+
+		
+	}
+	b{
+		font-weight: 500;
+		font-size: 14px;
+		color: #333;
+		
+		&:first-child{
+			display: block;
+		}
+	}
+	.title{
+		font-size: 18px;
+		color: #116cd6;
+		padding: 38px 0;
+		margin: 0;
+		display: inline-block;
+		line-height: 18px;
+		text-align: center;
+		display: block;
+		width: 100%;
+	}
+}

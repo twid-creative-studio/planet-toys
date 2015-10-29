@@ -1,0 +1,166 @@
+//Цвета
+@custom_text-color: #333;
+@blue_text-color: #2b78d9;
+@main-theme-color: #1663c4;
+
+//велечины
+@custom-margin: 30px;
+
+//шрифты
+@font-size_13px: 0.813em;
+@font-size_18px: 1.125em;
+@font-size_11px: 0.688em;
+@font-size_12px: 0.750em;
+@font-size_15px: 0.938em;
+@font-size_14px: 0.875em;
+@font-size_16px: 1em;
+@font-size_20px: 1.250em;
+@font-size_24px: 1.500em;
+@font-size_22px: 1.375em;
+@font-size_30px: 1.875em;
+
+@line_height_20px: 1.250em;
+@line_height_30px: 1.875em;
+@line_height_40px: 2.500em;
+@line_height_60px: 3.750em;
+
+
+header{
+	width: 100%;
+	font: sans-serif;
+	color: @custom_text-color;
+	position: relative;
+	padding: 0;
+	text-align: center;
+
+	.top{
+
+		height: 26px;
+		text-align: left;
+		position: relative;
+		border-bottom: 2px solid #ededed;
+		padding: 5px 15px;
+		width: calc(~'100% - 30px');
+
+		&:after {
+		 	content: ""; 
+		    display: block; 
+		    height: 0; 
+		    clear: both; 
+		    visibility: hidden;
+		}
+		.item{
+			color: #1663c4;
+			display: inline-block;
+			margin: 0px;
+			vertical-align: middle;
+			line-height: 26px;
+			font-size: 14px;
+			margin-right: 15px;
+
+			.code_phone,
+			.number_phone
+			{
+				display: inline-block;
+
+			}
+		}
+		.search{
+			width: 22px;
+			height: 26px;
+			background: url(../img/ui/search-icon_mob.png) no-repeat left center #fff;
+			background-size: 18px;
+			position: absolute;
+			right: 15px;
+			display: inline-block;
+			vertical-align: top;
+			margin-top: 0px;
+			transition: width 0.25s linear;					
+
+
+			input{
+				border: none;
+				display: none;
+				vertical-align: middle;
+				font-size: 14px;
+				margin-left: 27px;
+				width: calc(~'100% - 27px');
+				position: absolute;
+				right: 0;
+				line-height: 30px;
+
+			}
+			::-webkit-input-placeholder {
+			    color:    @custom_text-color;
+			}
+			:-moz-placeholder {
+			   color:    @custom_text-color;
+			   opacity:  1;
+			}
+			::-moz-placeholder { 
+			   color:    @custom_text-color;
+			   opacity:  1;
+			}
+			:-ms-input-placeholder {
+			   color:    @custom_text-color;
+			}
+
+			&.active{
+				width: 50%;
+			}
+		}
+	}
+	
+	.bottom{
+		border: none;
+		height: 140/2px;
+		padding: 5px 30/2px;
+		width: calc(~'100% - 30px');
+		background: url(../img/logo_large.png) no-repeat center center;
+		background-size: 60%;
+		.left{
+			width: 30px;
+			float: left;
+			display: table;
+			height: 100%;
+
+			&>div{
+				display: table-cell;
+				vertical-align: middle;
+			}
+			hr{
+				width: 100%;
+				height: 4px;
+				background: #2b78d9;
+				margin: 6px 0;
+				border: none;
+
+				&:first-child{
+					margin-top: 0;
+				}
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+		.right{
+			width: 40px;
+			float: right;
+			display: table;
+			height: 100%;
+
+			&>div{
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.cart-button{
+				float: right;
+				width: 30px;
+				height: 25px;
+				background: url(../img/ui/cart-button-mod-icon.png) no-repeat center center;
+				background-size: cover;
+			}
+		}
+		
+	}
+}

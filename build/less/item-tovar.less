@@ -1,0 +1,242 @@
+//Цвета
+@custom_text-color: #333;
+@blue_text-color: #333;
+@main-theme-color: #106cd6;
+
+//велечины
+@custom-margin: 30px;
+
+//шрифты
+@font-size_13px: 0.813em;
+@font-size_10px: 0.625em;
+@font-size_18px: 1.125em;
+@font-size_11px: 0.688em;
+@font-size_12px: 0.750em;
+@font-size_15px: 0.938em;
+@font-size_14px: 0.875em;
+@font-size_16px: 1em;
+@font-size_24px: 1.500em;
+
+@line_height_20px: 1.250em;
+@line_height_30px: 1.875em;
+
+.tovar{
+	font-size: @font-size_14px;
+	line-height: 20px;
+	text-align: center;
+	position: relative;
+	margin: 30px 0;
+	cursor: pointer;
+
+
+	/*&:hover .hover-block{
+		display: block !important;
+	}*/
+
+    &.active{
+    	.hover-block{
+			display: block !important;
+		}
+	}
+    
+
+	.photo{
+		width: 100%;
+		//height: 180px;
+		img{
+			width: 100%;
+		}
+	}
+	.title{
+		
+		color: @main-theme-color;
+		padding: 0 !important;
+		margin: 0 !important;
+		z-index: 1000;
+		position: relative;
+		
+	}
+	.desc{
+		color: #000;
+	}
+	.price{
+		color: #000;
+		padding-top: 8px;
+		span{
+			font-weight: 500;
+		}
+	}
+	.labels{
+		position: absolute;
+		color: #fff;
+		width: 100%;
+		z-index: 1;
+		text-align: left;
+
+		span{
+			display: inline-block;
+			width: 46px;
+			height: 20px;
+			-webkit-border-radius: 15px;
+			-moz-border-radius: 15px;
+			border-radius: 15px;
+			cursor: default;
+			text-align: center;
+			font-size: @font-size_10px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+
+			&.hit{
+				background: #f75353;
+			}
+			&.new{
+				background: #87d37c;
+			}
+		}
+	}
+	.hover-block{
+		position:absolute;
+		top: 0;
+		left: -35px;
+		background: #fff;
+		border: 2px solid #ededed;
+		padding: 0 33px;
+		padding-top: 15px;
+		width: 100%;	
+		display: block;
+		z-index: 1000000 !important;
+		-webkit-box-shadow: 0px 0px 5px 0px rgba(214, 214, 214, 1);
+		-moz-box-shadow:    0px 0px 5px 0px rgba(214, 214, 214, 1);
+		box-shadow:         0px 0px 5px 0px rgba(214, 214, 214, 1);
+
+		.top-info{
+			margin: 10px 0;
+			width: 100%;
+			&:after {
+	 			content: "."; 
+	    		display: block; 
+	    		height: 0; 
+	   			clear: both; 
+	    		visibility: hidden;
+	    	}
+	
+
+			.age{
+				width: 50%;
+				float: left;
+				font-size: @font-size_14px;
+				color: #666666;
+				text-align: left;
+				font-weight: 400;	
+				font-family: 'GothamPro';
+			}
+			.article{
+				float: right;
+				text-align: right;
+				color: @main-theme-color;
+				font-size: @font-size_14px;
+				font-weight: 500;	
+				font-family: 'GothamPro';
+			}
+		}
+		.buttons{
+			margin: 30px 0;
+			margin-bottom: 10px;
+
+			&:after {
+	 			content: ""; 
+	    		display: block; 
+	    		height: 0; 
+	   			clear: both; 
+	    		visibility: hidden;
+	    	}
+
+			.buy{
+				background: @main-theme-color;
+				line-height: 35px;
+				font-weight: 500;
+				color: #fff;
+				font-size: @font-size_12px;
+				letter-spacing: 2.4px;
+				text-transform: uppercase;
+				border: none;
+				cursor: pointer;
+				width: 50%;
+				float: left;
+				display: inline-block;
+				vertical-align: middle;
+
+				&:hover{
+					background: #fff;
+					border: 3px solid @main-theme-color;
+					line-height: 29px;
+					color: @main-theme-color;
+				}
+			}
+			.favorite{
+				display: inline-block;
+				width: 50%;
+				float: right;
+				line-height: 37px;
+				font-size: @font-size_12px;
+				vertical-align: middle;
+				text-align: center;
+				font-weight: 500;
+				color: #999999;
+				text-transform: uppercase;
+				text-decoration: underline;
+				&:hover{
+					color: @main-theme-color;
+				}
+			}
+		}
+		.ratings{
+			text-align: center;
+			position: relative;
+			z-index: 1000;
+			margin-top: 5px;
+			.star{
+				width: 14px;
+				height: 15px;
+				background: url(../img/ui/ratings_star.png) no-repeat center center;
+				background-size: cover;
+				display: inline-block;
+
+				&:hover{
+					cursor: pointer;
+
+				}
+			}
+			
+		}
+		.tovar-mini-slider{
+			margin: 30px 0;
+			margin-top: 0;
+			margin-bottom: 0px;
+			text-align: left;
+			.item{
+				width: 52px;
+				height: 52px;
+				box-sizing: border-box;
+				border: 2px solid transparent;
+				display: inline-block;
+				background-position: center !important;
+				background-size: cover !important;
+				background-repeat: no-repeat !important;
+				text-align: center;
+				img{
+					width: 90%;
+					height: 90%;
+					margin-top: 5%;
+				}
+				&:hover{
+					cursor: pointer;
+					//border: 2px solid #e5e5e5;
+				}
+				&.active{
+					border: 2px solid #e5e5e5;
+				}
+			}
+		}
+	}
+}

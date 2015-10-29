@@ -1,0 +1,180 @@
+//= module/header.html
+	
+	<div class="main contact">
+		<div class="container">
+			<p class="title">Адреса наших магазинов <span><a href="#">info@planettoys.ua</a></span></p>
+		</div>
+		<div class="map-block" id="map">
+			<div class="marker" data-lat="50.438855" data-lng="30.521575"></div>
+		</div>
+		<div class="container">
+			<div class="adress-shops">
+				<div class="items">
+					<div class="shop shop_1">
+						<p class="title" data-lat="50.493152" data-lng="30.558428">ТРЦ SkyMall</p>
+						<p class="adress-phone">
+							<span>ул. Генерала Ватутина, 2-Т</span>
+							<span>тел: 044 393 32 23</span>
+							<span>моб: 067 324 32 23</span>
+						</p>
+						<p class="time-work">10:00 - 22:00, без выходных</p>
+						<p class="desc">Бесплатные автобусы от: <br><span class="blue"></span> Петровка и <span class="red"></span> Дарница <br>Каждые 30 минут с 9:30 до 22:00 и от универсама “Фестивальный” (по просп. Маяковского)</p>
+					</div>
+				</div>
+				<div class="items">
+					<div class="shop shop_2">
+						<p class="title" data-lat="50.438855" data-lng="30.521575">ТРЦ Gulliver</p>
+						<p class="adress-phone">
+							<span>ул. Спортивная, 1-А</span>
+							<span>тел: (044) 502 32 23 </span>
+							<br>
+						</p>
+						<p class="time-work">10:00 - 22:00, без выходных</p>
+						<p class="desc"><span class="green"></span> Палац Спорту</p>
+					</div>
+				</div>
+				<div class="items">
+					<div class="shop shop_3">
+						<p class="title" data-lat="50.454809" data-lng="30.636499">ТРЦ Проспект</p>
+						<p class="adress-phone">
+							<span>ул. Красногвардейская 1-В</span>
+							<span>тел: (044) 219 32 23 </span>
+						</p>
+						<p class="time-work">10:00 - 22:00, без выходных</p>
+						<p class="desc">Бесплатные автобусы от: <br><span class="red"></span> Черниговская</p>
+					</div>
+				</div>
+				<div class="items">
+					<div class="shop shop_4">
+						<p class="title" data-lat="50.343209" data-lng="30.545100">ТРЦ ArtMall</p>
+						<p class="adress-phone">
+							<span>ул. Академика Заболотного 37</span>
+							<span>тел: 044 219 33 32</span>
+						</p>
+						<p class="time-work">10:00 - 22:00, без выходных</p>
+						<p class="desc">Бесплатные автобусы от: <br> <span class="green"></span>  Выдубичи и  <span class="blue"></span><br>Теремки Каждые 30 минут с 9:30 до 22:00</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="form-block">
+				<p class="title">Написать нам письмо</p>
+				<form>
+					<input type="text" placeholder="Представтесь">
+					<textarea placeholder="Ваш отзыв или пожелание"></textarea>
+					<button type="submit">отправить</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+//= module/footer.html
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script>
+	$(document).on('click', '.contact .adress-shops .shop .title', function(){
+	    $('.contact .adress-shops').find('.title').removeClass('active');
+	    $(this).addClass('active');
+	 
+	    $('#map').html(" ");
+	    var	child_obj = document.createElement('div');
+	    	child_obj.setAttribute('data-lat',$(this).attr('data-lat'));
+	    	child_obj.setAttribute('data-lng',$(this).attr('data-lng'));
+	    	child_obj.setAttribute('class',"marker");
+
+	   	$('#map').html(child_obj);
+
+	    
+		$('#map').each(function(){
+			render_map( $(this) );
+		});
+		
+	    
+	});
+
+		// маркер
+		var red = {
+			url: 'assets/img/pin.png',
+			// This marker is 20 pixels wide by 32 pixels tall.
+			size: new google.maps.Size(196, 46),
+			// The origin for this image is 0,0.
+			origin: new google.maps.Point(0, 0),
+			// The anchor for this image is the base of the flagpole at 0,32.
+			anchor: new google.maps.Point(21, 56)
+		};
+
+		function render_map( $el ) {
+
+			// var
+			var $markers = $el.find('.marker');
+			// vars
+			var args = {
+				zoom		: 18,
+				center		: new google.maps.LatLng(0, 0),
+				scrollwheel : false,
+				mapTypeId	: google.maps.MapTypeId.ROADMAP
+			};
+			// create map
+			var map = new google.maps.Map( $el[0], args);
+			// add a markers reference
+			map.markers = [];
+			// add markers
+			$markers.each(function(){
+				add_marker( $(this), map );
+			});
+			// center map
+			center_map( map );
+		}
+
+		function add_marker( $marker, map ) {
+			// var
+			var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
+			// create marker
+			var marker = new google.maps.Marker({
+				position	: latlng,
+				map			: map,
+				icon        : red
+			});
+			// add to array
+			map.markers.push( marker );
+			// if marker contains HTML, add it to an infoWindow
+			if( $marker.html() )
+			{
+				// create info window
+				var infowindow = new google.maps.InfoWindow({
+					content		: $marker.html()
+				});
+				// show info window when marker is clicked
+				google.maps.event.addListener(marker, 'click', function() {
+					infowindow.open( map, marker );
+				});
+			}
+		}
+
+		function center_map( map ) {
+			// vars
+			var bounds = new google.maps.LatLngBounds();
+			// loop through all markers and create bounds
+			$.each( map.markers, function( i, marker ){
+				var latlng = new google.maps.LatLng( marker.position.lat(), marker.position.lng() );
+				bounds.extend( latlng );
+			});
+			// only 1 marker?
+			if( map.markers.length == 1 ){
+				// set center of map
+				map.setCenter( bounds.getCenter() );
+				map.setZoom( 16 );
+			}else{
+				// fit to bounds
+				map.fitBounds( bounds );
+			}
+		}
+
+		$(document).ready(function(){
+			// карта
+			$('#map').each(function(){
+				render_map( $(this) );
+			});
+		});
+</script>

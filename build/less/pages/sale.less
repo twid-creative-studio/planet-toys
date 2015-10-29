@@ -1,0 +1,67 @@
+//Цвета
+@custom_text-color: #333;
+@main-theme-color: #1663c4;
+
+//велечины
+@custom-margin: 30px;
+
+//шрифты
+@font-size_13px: 0.813em;
+@font-size_18px: 1.125em;
+@font-size_11px: 0.688em;
+@font-size_12px: 0.750em;
+@font-size_15px: 0.938em;
+@font-size_14px: 0.875em;
+@font-size_16px: 1em;
+@font-size_20px: 1.250em;
+@font-size_24px: 1.500em;
+@font-size_22px: 1.375em;
+
+@line_height_20px: 1.250em;
+@line_height_30px: 1.875em;
+@line_height_40px: 2.500em;
+@line_height_25px: 1.563em;
+
+.sale{
+	padding-bottom: 0px;
+	text-align: center;
+	.container{
+		&:after {
+		 	content: ""; 
+		    display: block; 
+		    height: 0; 
+		    clear: both; 
+		    visibility: hidden;
+		}
+	}
+	.title{
+		font-size: @font-size_24px;
+		color: #116cd6;
+		padding: 15px 0;
+		padding-bottom: 10px;
+		margin: 0;
+		display: inline-block;
+		line-height: @line_height_20px;
+	}
+	
+	.items{
+		width: 100%;
+		margin-right: 30px;
+
+		&:nth-of-type(2n){
+			margin-right: 0;
+		}
+	}
+	.sale-item{
+		width: 100%;
+		margin-bottom: 10px;
+
+		img{
+			width: 100%;
+		}
+	}
+	.show-more-block{
+		padding: 40px 0;
+		padding-top: 0px;
+	}
+}

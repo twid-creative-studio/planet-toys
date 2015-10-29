@@ -1,0 +1,166 @@
+//Цвета
+@custom_text-color: #333;
+@main-theme-color: #005ac1;
+
+//велечины
+@custom-margin: 30px;
+
+//шрифты
+@font-size_13px: 0.813em;
+@font-size_18px: 1.125em;
+@font-size_11px: 0.688em;
+@font-size_15px: 0.938em;
+@font-size_14px: 0.875em;
+
+*{
+	outline: none;
+	font-family: 'GothamPro';
+}
+html{
+	font-size: 16px;
+}
+body{
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+body,html,p,div,ul,li,h1,h2,h3,h4,h5,h6,a{
+	padding: 0;
+	margin: 0;
+}
+
+a{
+	color: inherit;
+	text-decoration: none;
+
+	&:hover,
+	&:focus,
+	&:active
+	{
+		text-decoration: none;
+	}
+}
+
+.container{
+	min-width: calc(~'320px - 30px') !important;
+	overflow: visible;
+}
+.main{
+	overflow-x: hidden;
+
+	&.index{
+		overflow-x: visible;
+	}
+}
+.show-more{
+	&:hover{
+		background: #2b78d9;
+		color: #fff;
+	}
+}
+.tovar{
+	.desc{
+		line-height: 15px;
+	}
+	.buttons{
+		font-size: 110%;
+		.buy,
+		.favorite
+		{
+			width: 100% !important;
+		}
+	}
+}
+
+#menu-mobile{
+.body-mob-menu{
+	width: calc(~'100% - 50px');
+
+	.mob-menu-header{
+		.top{
+			padding: 0 15px;
+		}
+		.bottom{
+			height: 80px;
+			.avatar-user {
+				.photo{
+					margin: 20px auto;
+					width: 35px;
+					height: 35px;
+				}
+			}
+		}
+	}
+	.mob-menu-body{
+		.category {
+			//max-height: 50px;
+			a{
+				//line-height: 50px;
+			}
+		}
+	}
+}
+&.overlay-mob-menu{
+	width: calc(~'100% - 50px');
+	padding-right: 50px;
+}
+
+
+}
+.close-button{
+width: 20px;
+height: 20px;
+right: 15px !important;
+top: 60px !important;
+}
+
+
+.enter-main,
+.enter-registration,
+.recovery-pass
+{
+.modal-content{
+	width: 100%;
+}
+.modal-body{
+	.title{
+		font-size: 24px;
+	}
+	button{
+		font-size: 14px;
+	}
+	span,
+	a
+	{
+		font-size: 13px;
+	}
+}
+.left,
+.right
+{
+	width: 100% !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	p{
+		font-size: 13px;
+	}
+}
+}
+.recovery-pass{
+.modal-body{
+	padding: 25px;
+}
+}
+
+.modal-backdrop{
+background-size: 75%;
+}
+.popup-cart{
+width: calc(~'100% - 10px');
+font-size: 160%;
+left: 3px !important;
+
+
+&:before{
+	right: 20px;
+}
+}

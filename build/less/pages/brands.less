@@ -1,0 +1,171 @@
+//Цвета
+@custom_text-color: #333;
+@blue_text-color: #2b78d9;
+@main-theme-color: #1663c4;
+
+//велечины
+@custom-margin: 30px;
+
+//шрифты
+@font-size_13px: 0.813em;
+@font-size_18px: 1.125em;
+@font-size_11px: 0.688em;
+@font-size_12px: 0.750em;
+@font-size_15px: 0.938em;
+@font-size_14px: 0.875em;
+@font-size_16px: 1em;
+@font-size_20px: 1.250em;
+@font-size_24px: 1.500em;
+@font-size_22px: 1.375em;
+
+@line_height_20px: 1.250em;
+@line_height_30px: 1.875em;
+@line_height_40px: 2.500em;
+
+.brands{
+	padding-bottom: 50px;
+	.container{
+		padding: 0 15px;
+		min-width: inherit;
+		margin: 0 !important;
+
+		&:after {
+		 	content: ""; 
+		    display: block; 
+		    height: 0; 
+		    clear: both; 
+		    visibility: hidden;
+		}
+	}
+
+	&:after {
+	 	content: ""; 
+	    display: block; 
+	    height: 0; 
+	    clear: both; 
+	    visibility: hidden;
+	}
+	.items{
+		float: left;
+		width: 50%;
+
+		&:nth-of-type(5n){
+			.brand_item{
+				//border-right: none;
+			}
+		}
+		&:nth-of-type(2n){
+			.brand_item{
+				border-right: 1px solid #ededed !important;
+			}
+		}
+	}
+	.top-sort{
+		line-height: 60px;
+		margin: 30px 0;
+		position: relative;
+		line-height: 30px;
+
+		&:after {
+		 	content: ""; 
+		    display: block; 
+		    height: 0; 
+		    clear: both; 
+		    visibility: hidden;
+	    }
+
+		li{
+			display: inline-block;
+			float: left;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			&:first-child{
+				a{
+					text-transform: none;
+					margin-left: 0;
+				}
+			}
+
+			a{
+				padding: 5px 10px;
+				text-transform: uppercase;
+				font-weight: 500;
+				color: #333333;
+				font-size: @font-size_18px;
+				&.active{
+					color: #fff;
+					background: #106cd6;
+				}
+			}
+		}
+		&_open{
+			top: 130px;
+			display: none;
+			width: 1050px;
+			position: absolute;
+			left: 0;
+			columns: 6;
+		    -webkit-columns: 6;
+		    -moz-columns: 6;
+
+		    -moz-column-width: 150px;  
+		    -webkit-column-width: 150px;   
+		    column-width: 150px;
+
+		    -webkit-column-gap: 30px;  
+		    -moz-column-gap: 30px;  
+		    column-gap: 30px;  
+
+		    column-fill: auto;
+
+		    
+
+		    display: none;
+
+		    li{
+		    	display: inline-block;
+		    	width: 100%;
+		    	position: relative;
+		    	line-height: @line_height_30px;
+		    	a{
+		    		line-height: @line_height_30px;
+		    		font-size: @font-size_14px;
+		    		text-transform: none;
+		    		font-weight: normal;
+		    	}
+		    	
+		    }
+		}
+	}
+	.brand_item{ 	
+		height: 210px;
+		border: 1px solid #ededed;
+		text-align: center;
+		margin-left: -1px;
+		margin-top: -1px;
+		
+
+		&:after{
+			content: "";
+			width: 0px;
+			display: inline-block;
+			vertical-align: middle;
+			height: 100%;
+		}
+
+		a{
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: -5px;
+		
+		}
+		img{
+			max-height: 210px;
+			max-width: 100%;
+			display: inline-block;
+			vertical-align: middle;			
+		}
+	}
+}

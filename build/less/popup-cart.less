@@ -1,0 +1,233 @@
+@custom_color_blue: #116cd6;
+@default_text-color: #333333;
+
+@font-size_13px: 0.813em;
+@font-size_18px: 1.125em;
+@font-size_11px: 0.688em;
+@font-size_15px: 0.938em;
+@font-size_14px: 0.875em;
+
+
+
+.popup-cart{
+	width: 370px;
+	background: #fff;
+	border: 2px solid @custom_color_blue;	
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(153, 153, 153, 1);
+	-moz-box-shadow:    0px 0px 10px 0px rgba(153, 153, 153, 1);
+	box-shadow:         0px 0px 10px 0px rgba(153, 153, 153, 1);
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	padding: 28px 0;
+	z-index: 1000;
+
+	display: none;
+
+
+	&:before{
+		content: "";
+		width: 15px;
+	    height: 15px;
+	    border-bottom: 2px solid @custom_color_blue;
+	    border-right: 2px solid @custom_color_blue;
+	    position: absolute;
+	    background: #fff;
+	    top: -10px;
+	    right: 65px;
+	   /* -webkit-box-shadow: 0px 0px 10px 0px rgba(153, 153, 153, 1);
+		-moz-box-shadow:    0px 0px 10px 0px rgba(153, 153, 153, 1);
+		box-shadow:         0px 0px 10px 0px rgba(153, 153, 153, 1);*/
+		-moz-box-shadow:    4px 4px 6px 0px #ccc;
+		-webkit-box-shadow: 4px 4px 6px 0px #ccc;
+		box-shadow:         4px 4px 6px 0px #ccc;	
+
+		transform: rotate(-135deg) ;
+		-webkit-transform: rotate(-135deg) ;
+		-moz-transform: rotate(-135deg) ;
+		-o-transform: rotate(-135deg) ;
+		-ms-transform: rotate(-135deg) ;
+
+		z-index: 1;
+	}
+	/*&:after{
+		content: "";
+		width: 0;
+	    height: 0;
+	    border-left: 12px solid transparent;
+	    border-right: 12px solid transparent;
+	    border-bottom: 14px solid #fff;
+	    position: absolute;
+	    top: -14px;
+	    right: 68px;
+	}*/
+
+	.popup-cart_header{
+		height: 1.250em;
+		display: inline-block;
+		width: calc(~'100% - 56px');
+		vertical-align: bottom;
+		position: relative;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #ededed;
+		margin: 0px 28px;
+		.title{
+			font-size: @font-size_18px;
+			display: inline-block;
+			position: absolute;
+			vertical-align: bottom;
+			line-height: 100%;
+			bottom: 20px;
+			color: @default_text-color;
+		}
+		.count{
+			color: @custom_color_blue;
+			font-size: @font-size_13px;
+			display: inline-block;
+			text-align: left;
+			position: absolute;
+			right: 0;
+			bottom: 20px;
+			vertical-align: bottom;
+			line-height: 100%;
+			color: @default_text-color;
+		}
+	}
+	.popup-cart_body{
+		min-height: 120px;
+		max-height: 120*3+66px;
+		position: relative;
+		overflow-x: hidden !important;
+		overflow-y: hidden !important;
+		padding: 0 28px;
+		.popup-cart_item{
+			font-size: @font-size_13px;
+			margin: 17px 0;
+			.photo{
+				display: inline-block;
+				width: 90px;
+				height: auto;
+				vertical-align: top;
+				img{
+					width: 100%;
+					height: auto;
+				}
+			}
+			.info{
+				display: inline-block;
+				width: calc(~'100% - 110px');
+				padding-left: 15px;
+				vertical-align: top;
+				line-height: 20px;
+
+		
+
+				.title{
+					color: @custom_color_blue;
+				}
+				.count{
+					margin: 7px 0;
+					display: inline-block;
+					vertical-align: middle;
+					width: 49%;
+
+					.custom-option-container select{
+						margin-left: -1px;
+					}
+				}
+				.price{
+					display: inline-block;
+					width: calc(~'49% - 5px');
+					vertical-align: middle;
+					padding-left: 5px;
+					cursor: default;
+				}
+				.button_item-delete{
+					background: transparent;
+					border: none;
+					position: relative;
+					display: inline-block;
+					padding: 0;
+					margin: 0;
+
+					&:after{
+						content: "";
+						position: absolute;
+						bottom: 0;
+						left: 0;
+						background: #d8d8d8;
+						width: 100%;
+						height: 1px;
+					}
+					&:hover{
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+	.popup-cart_footer{
+		border-top: 1px solid #ededed;
+		padding-top: 20px;
+		text-align: center;
+		width: calc(~'100% - 56px');
+		margin: 0 28px;
+		display: inline-block;
+		vertical-align: bottom;
+		position: relative;
+		.title{
+			font-size: @font-size_13px;
+			display: inline-block;
+			vertical-align: top;
+			line-height: 100%;
+			bottom: 20px;
+			float: left;
+		}
+		.summ{
+			font-size: @font-size_13px;
+			display: inline-block;
+			text-align: left;
+			float: right;
+			right: 0;
+			bottom: 20px;
+			vertical-align: top;
+			line-height: 100%;
+			font-weight: 500;
+
+			span{
+				font-size: 15px;
+				color: @default_text-color;
+			}
+		}
+		.button_checkout{
+			font-weight: 500;
+			text-transform: uppercase;
+			color: #fff;
+			font-size: @font-size_14px;
+			border: none;
+			background: @custom_color_blue;
+			line-height: 45px;
+			width: 100%;
+			margin: 20px 0;
+			&:hover{
+				cursor: pointer;
+			}
+		}
+		.continue_shopping{
+			font-size: @font-size_13px;
+			color: @custom_color_blue;
+			position: relative;
+
+			&:after{
+				content: "";
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				background: #d5e0f5;
+				width: 100%;
+				height: 1px;
+			}
+		}
+	}
+	
+}

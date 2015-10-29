@@ -1,0 +1,158 @@
+//Цвета
+@custom_text-color: #333;
+@main-theme-color: #1663c4;
+
+//велечины
+@custom-margin: 30px;
+
+//шрифты
+@font-size_13px: 0.813em;
+@font-size_18px: 1.125em;
+@font-size_11px: 0.688em;
+@font-size_12px: 0.750em;
+@font-size_15px: 0.938em;
+@font-size_14px: 0.875em;
+@font-size_16px: 1em;
+@font-size_20px: 1.250em;
+@font-size_24px: 1.500em;
+@font-size_22px: 1.375em;
+
+@line_height_20px: 1.250em;
+@line_height_30px: 1.875em;
+@line_height_40px: 2.500em;
+
+.category{
+	padding-bottom: 16px;
+
+	.container{
+		padding: 0 15px;
+		min-width: 320px;
+
+		&:after {
+		 	content: ""; 
+		    display: block; 
+		    height: 0; 
+		    clear: both; 
+		    visibility: hidden;
+		}
+	}
+	.mob-filters{
+		height: 70px;
+	}
+	&.main{
+		padding-bottom: 15px;
+	}
+	&:after {
+	 	content: ""; 
+	    display: block; 
+	    height: 0; 
+	    clear: both; 
+	    visibility: hidden;
+	}
+	.promo{
+		max-width: 1290px;
+		max-height: 360px;
+		margin-top: 20px !important;
+		margin-bottom: 20px !important;
+		position: relative;
+
+		img{
+			width: 100%;
+		}
+
+	}
+	.mob-filters{
+		height: 70px;
+	}
+	.filter{
+		width: calc(~'100% - 30px');
+		max-height: 37px;
+
+		.filter-title{
+			padding-left: 12px;
+		}
+		&:nth-of-type(2) {
+		  margin-top: 35px;
+		}
+		&#sort .filter-item{
+			line-height: 2.75em !important;
+		}
+		.filter-group-title{
+			line-height: 2.75em !important;
+
+			.ui-button{
+				background-position: -55px center !important;
+			}
+
+			
+		}
+		.filter-group{
+			max-height: 48px;
+			&.active{
+				.filter-group-title{
+					.ui-button{
+						background-position: -37px center !important;
+					}
+				}
+			}
+		}
+		.filter-group-item{
+			//font-size: 140%;
+		}
+		.ui-button{
+			width: 16px !important;
+			height: 16px !important;
+			background-size: 144/2px !important;
+			margin-top: -8px !important;
+		}
+		&.active .filter-title .ui-button{
+			background-position: -19px center !important;
+		}
+
+	}
+
+	.items{
+		width: calc(~'50% - 30px');
+		padding: 0 15px;
+		float: left;
+		&:nth-of-type(4n){
+			padding-right: 15px;
+		}
+		.tovar{
+			line-height: 30/2+2px;
+			margin: 13px 0;
+
+			.tovar-mini-slider {
+				.item{
+					width: 35px;
+					height: 35px;
+				}
+			}
+
+			.labels{
+				margin-top: -15px;
+				span{
+					width: 70/2px;
+					height: 30/2px;
+				}
+			}
+			.desc{
+				line-height: 15px;
+			}
+			.price{
+				padding-top: 0;
+			}
+		}
+	} 
+	
+	.show-more-block{
+		margin: 35px 0;
+		.show-more{
+			width: 100%;
+			height: 30px;
+			border: 2px solid #2b78d9;
+			font-size: 12px;
+		}
+	}
+	
+}

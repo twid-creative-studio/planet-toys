@@ -1,0 +1,120 @@
+//Цвета
+@custom_text-color: #333;
+@blue_text-color: #2b78d9;
+@main-theme-color: #1663c4;
+
+//велечины
+@custom-margin: 30px;
+
+//шрифты
+@font-size_13px: 0.813em;
+@font-size_18px: 1.125em;
+@font-size_11px: 0.688em;
+@font-size_12px: 0.750em;
+@font-size_15px: 0.938em;
+@font-size_14px: 0.875em;
+@font-size_16px: 1em;
+@font-size_20px: 1.250em;
+@font-size_24px: 1.500em;
+@font-size_22px: 1.375em;
+@font-size_30px: 1.875em;
+
+@line_height_20px: 1.250em;
+@line_height_30px: 1.875em;
+@line_height_40px: 2.500em;
+@line_height_60px: 3.750em;
+@media screen and (min-width: 480px){
+	.index{
+		.recommended{
+			.content-goods{
+				.items{
+				    width: calc(~'33.3% - 2px');
+				}
+			}
+		}
+		.fichers{
+			.items{
+			    width: 33.33%;
+			}
+		}
+	}
+	.brands{
+		.items{
+		    width: 33.33%;
+		}
+	}
+	.category{
+		.items{
+		    width: calc(~'33.3% - 30px');
+		}
+	}
+	.lego{
+		.content{
+			.section{
+				.items{
+					margin-left: 0;
+					margin-right: 15px;
+				    width: calc(~'33.3% - 11px');
+
+				    &:nth-of-type(3n){
+						margin-right: 0px;
+						margin-left: 0;
+
+					}
+				}
+			}
+		}
+	}
+	.subcategory{
+		.items{
+		    width: calc(~'50% - 30px');
+		}
+	}
+}
+
+@media screen and (min-width: 768px){
+	.index{
+		.recommended{
+			.content-goods{
+				.items{
+				    width: calc(~'25% - 2px');
+				}
+			}
+		}
+	}
+	.brands{
+		.items{
+		    width: 25%;
+		}
+	}
+	.category{
+		.items{
+		    width: calc(~'25% - 30px');
+		}
+	}
+	.sale{
+		.items{
+			float: left;
+			margin-left: 15px;
+			margin-right: 15px;
+		    width: calc(~'50% - 22.5px');
+
+		    &:nth-child(2n){
+		    	margin-right: 0;
+		    	margin-left: 0;
+		    }
+		}
+	}
+	.subcategory{
+		.items{
+		    width: calc(~'33.3% - 30px');
+		}
+	}
+}
+@media screen and (min-width: 1024px){
+	.subcategory{
+		.items{
+		    width: calc(~'25% - 30px');
+		}
+	}
+}
